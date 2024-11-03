@@ -16,13 +16,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set up LaTeX
-        uses: dante-ev/latex-action@v2
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
         with:
-          root_file: main.tex
+          root_file: main.tex  # substitua pelo nome do seu arquivo .tex
 
       - name: Upload PDF to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./ # Localize o PDF gerado
+          publish_dir: ./  # Esteja certo de que aponta para o diretório com o PDF gerado
